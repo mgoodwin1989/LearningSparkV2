@@ -105,3 +105,12 @@ venv.bak/
 .mypy_cache/
 
 .DS_Store
+
+# vscode ignores
+**/.vscode
+**/*.code-workspace
+
+# vscode java
+**/.classpath
+**/.settings
+**/.project
