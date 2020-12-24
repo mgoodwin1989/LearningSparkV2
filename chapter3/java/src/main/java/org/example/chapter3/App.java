@@ -1,5 +1,7 @@
 package org.example.chapter3;
 
+import static org.apache.spark.sql.functions.*;
+
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -36,6 +38,10 @@ public class App
         ds.show(false);
         ds.printSchema();
         System.out.println(ds.schema());
+        ds.select(expr("Hits").multiply(2)).show(2);
+        ds.select(col("Hits").multiply(2)).show(2);
+        ds.select(expr("Hits * 2")).show(2);
+        ds.withColumn("Big Hitters", (expr("Hits > 10000"))).show();
         sparkSession.stop();
     }
 }
