@@ -114,3 +114,10 @@ venv.bak/
 **/.classpath
 **/.settings
 **/.project
+
+# spark internal files
+**/metastore_db
+**/*_SUCCESS*
+**/.part*
+**/part*
+
